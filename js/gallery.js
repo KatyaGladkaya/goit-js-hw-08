@@ -84,19 +84,17 @@ images.forEach((image) => {
   galleryContainer.appendChild(galleryItem);
 });
 
-galleryContainer.addEventListener('click', event => {
+galleryContainer.addEventListener("click", (event) => {
   event.preventDefault();
-  const clickedImage = event.target.closest('a');
+  const clickedImage = event.target.closest("img");
   if (clickedImage) {
-    console.log(clickedImage.href);
+    console.log(clickedImage);
   }
   if (clickedImage) {
-    const largeImageURL = clickedImage.href;
+    const largeImageURL = clickedImage.dataset.source;
     const modal = basicLightbox.create(`
-      <img src="${largeImageURL}" alt="Image" />
+      <img src="${largeImageURL}" alt="${clickedImage.alt}" />
     `);
     modal.show();
   }
-   
 });
-

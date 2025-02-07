@@ -7,6 +7,7 @@
 
 .gallery-item {
     width: calc(33.33% - 48px);
+ 
 }
 
 .gallery-image {
